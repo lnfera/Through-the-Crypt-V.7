@@ -1250,8 +1250,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.18077807, y: 1.9246328, z: 0.9130868}
-  m_Center: {x: -0.010000136, y: 0.9776554, z: 0.013379705}
+  m_Size: {x: 0.2612696, y: 1.9246328, z: 0.5491878}
+  m_Center: {x: 0.030052116, y: 0.9776554, z: 0.010847044}
 --- !u!114 &1241670923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1265,13 +1265,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1283903527}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1241670922}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 1
-  m_DistanceCalculationMode: 1
+  m_DistanceCalculationMode: 0
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -3143,7 +3144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 271350720295678588, guid: 105967cfda6b98741b3c1038b0de048a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.253
+      value: -1.24
       objectReference: {fileID: 0}
     - target: {fileID: 271350720295678588, guid: 105967cfda6b98741b3c1038b0de048a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3209,7 +3210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9124985861795284707, guid: 0fc556ed429794f4985b439af3bc782c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.153
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 9124985861795284707, guid: 0fc556ed429794f4985b439af3bc782c, type: 3}
       propertyPath: m_LocalRotation.w
