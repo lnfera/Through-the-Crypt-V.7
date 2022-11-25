@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public int money, health;
     public string item;
     // Start is called before the first frame update
     void Start()
@@ -16,16 +17,23 @@ public class Item : MonoBehaviour
     {
         
     }
-    public void EatItem(int value)
+    public void EatItem(int mValue, int hValue)
     {
-        
+        if (item == "Money")
+        {
+            money += mValue;
+        }
+        else if (item == "Healthp")
+        {
+            health += hValue;
+        }
         Destroy(gameObject);
     }
     private void OnCollisionEnter(Collision collision) 
     {
          if (collision.collider.tag == "Player")
          {
-
+            EatItem(100, 25);
          }
     }
 }
