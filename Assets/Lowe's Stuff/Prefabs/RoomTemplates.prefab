@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6141557569254427468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6141557569254427470}
+  - component: {fileID: 6141557569254427471}
+  m_Layer: 0
+  m_Name: RoomTemplates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6141557569254427470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141557569254427468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.82758, y: 9.203115, z: 34.19413}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6141557569254427471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141557569254427468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678cc6f365bace54e9b65d1781ac1267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottomRooms:
+  - {fileID: 3697830937323812959, guid: fbd6ef547c1847146a8eb04ea55b201f, type: 3}
+  - {fileID: 9135580257871066517, guid: d42e5875700c1cb42a534b6c85e24f8a, type: 3}
+  - {fileID: 1235919648269925848, guid: b9dd2d7727399bf46844772f1210e34d, type: 3}
+  topRooms:
+  - {fileID: 1235919648269925848, guid: b9dd2d7727399bf46844772f1210e34d, type: 3}
+  - {fileID: 228893360430660382, guid: ccbcc3930b26d5c48a39a019315a45d3, type: 3}
+  - {fileID: 9218197816593034961, guid: afa33be38899de144979005348e03b3e, type: 3}
+  leftRooms:
+  - {fileID: 607337537517196111, guid: 431762f8455c6f44fae729a32c979b25, type: 3}
+  - {fileID: 9135580257871066517, guid: d42e5875700c1cb42a534b6c85e24f8a, type: 3}
+  - {fileID: 9218197816593034961, guid: afa33be38899de144979005348e03b3e, type: 3}
+  rightRooms:
+  - {fileID: 607337537517196111, guid: 431762f8455c6f44fae729a32c979b25, type: 3}
+  - {fileID: 3697830937323812959, guid: fbd6ef547c1847146a8eb04ea55b201f, type: 3}
+  - {fileID: 228893360430660382, guid: ccbcc3930b26d5c48a39a019315a45d3, type: 3}
+  EndRooms: []
+  furniture: []
