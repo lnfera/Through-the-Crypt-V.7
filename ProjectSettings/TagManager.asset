@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SpawnPoint
   - Room
+  - Money
+  - Healthhp
   layers:
   - Default
   - TransparentFX
