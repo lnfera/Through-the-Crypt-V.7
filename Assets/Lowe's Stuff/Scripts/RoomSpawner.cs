@@ -51,7 +51,7 @@ public class RoomSpawner : MonoBehaviour
                 var rand = Random.Range(0, templates.rightRooms.Length);
                 Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
             }
-            NavMeshBuilder.BuildNavMesh();
+
         }
     }
 
