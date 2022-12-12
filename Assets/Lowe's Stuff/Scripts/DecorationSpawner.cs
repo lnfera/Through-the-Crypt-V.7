@@ -14,7 +14,7 @@ public class DecorationSpawner : MonoBehaviour
         templates = FindObjectOfType<RoomTemplates>();
         int Rand1 = Random.Range(0, SpawnChans);
         Debug.Log(Rand1);
-        if (Rand1 == 1)
+        if (Rand1 >= 1)
         {
             int Rand2 = Random.Range(0, templates.furniture.Length);
             Instantiate(templates.furniture[Rand2], transform.position, templates.furniture[Rand2].transform.rotation);

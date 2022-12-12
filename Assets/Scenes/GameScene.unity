@@ -240,9 +240,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
+      propertyPath: furniture.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
       propertyPath: EndRooms.Array.data[0]
       value: 
       objectReference: {fileID: 3839335264639879889, guid: 0694c9cee17340e44902bab1cfa6cd80, type: 3}
+    - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
+      propertyPath: furniture.Array.data[0]
+      value: 
+      objectReference: {fileID: 4318951163588433196, guid: f5bbc51d41e9d2c46845e67afd2fd9b9, type: 3}
+    - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
+      propertyPath: furniture.Array.data[1]
+      value: 
+      objectReference: {fileID: 4938259581443861499, guid: 7efc23e55ad12fa4789efe8820b32b29, type: 3}
+    - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
+      propertyPath: furniture.Array.data[2]
+      value: 
+      objectReference: {fileID: 7197590821541188759, guid: 0b3f0792c04e0ca4c8dce8d80b322ede, type: 3}
+    - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
+      propertyPath: furniture.Array.data[3]
+      value: 
+      objectReference: {fileID: 8239777189912438644, guid: 18a664fecff8bfb4b87dc835e98acedd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
 --- !u!1 &1743228122

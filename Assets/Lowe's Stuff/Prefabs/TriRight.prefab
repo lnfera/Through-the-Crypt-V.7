@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da60fe908bac32444b38df821fd02a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnChans: 2
+  SpawnChans: 3
 --- !u!1 &1379443683472370534
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +244,7 @@ MonoBehaviour:
   openingdirection: 1
   SpawnerInWay: 0
   RoomInWay: 0
+  waitTime: 4
 --- !u!54 &2862961179104309265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -322,6 +323,7 @@ MonoBehaviour:
   openingdirection: 3
   SpawnerInWay: 0
   RoomInWay: 0
+  waitTime: 4
 --- !u!54 &2862961179116093344
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -400,6 +402,7 @@ MonoBehaviour:
   openingdirection: 2
   SpawnerInWay: 0
   RoomInWay: 0
+  waitTime: 4
 --- !u!54 &2862961179468847127
 Rigidbody:
   m_ObjectHideFlags: 0

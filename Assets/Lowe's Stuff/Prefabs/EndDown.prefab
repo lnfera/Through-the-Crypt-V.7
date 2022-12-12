@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da60fe908bac32444b38df821fd02a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnChans: 1
+  SpawnChans: 2
 --- !u!1 &1257768430
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   openingdirection: 4
   SpawnerInWay: 0
   RoomInWay: 0
+  waitTime: 4
 --- !u!54 &7301565256084421694
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -153,7 +154,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 583605167599820233}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1985002982
 MonoBehaviour:
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da60fe908bac32444b38df821fd02a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnChans: 1
+  SpawnChans: 2
 --- !u!1 &1997775850
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da60fe908bac32444b38df821fd02a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnChans: 2
+  SpawnChans: 3
 --- !u!1 &583605166403653443
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,8 +351,8 @@ Transform:
   - {fileID: 3922619880456137200}
   - {fileID: 1094469243}
   - {fileID: 1997775851}
-  - {fileID: 4756737187201976908}
   - {fileID: 1985002981}
+  - {fileID: 4756737187201976908}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1096,7 +1097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3922619880933836181, guid: 342b57015bbfa8541abfea63c9796c16, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3922619880933836181, guid: 342b57015bbfa8541abfea63c9796c16, type: 3}
       propertyPath: m_LocalPosition.x
