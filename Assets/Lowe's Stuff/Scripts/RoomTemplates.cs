@@ -26,6 +26,7 @@ public class RoomTemplates : MonoBehaviour
     {
         if(WaitTime <= 0 && BossSpawned == false)
         {
+            /*
             for (int i = 0; < rooms.Count; i++)
             {
                 if(i == rooms.Count - 1)
@@ -33,7 +34,7 @@ public class RoomTemplates : MonoBehaviour
                     Instantiate(Boss, rooms[i].transform.position, Quaternion.identity);
                     BossSpawned = true;
                 }
-            }
+            }*/
         }
     }
 }
