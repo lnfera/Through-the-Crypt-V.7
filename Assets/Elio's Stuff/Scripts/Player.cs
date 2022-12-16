@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int health;
-    public float maxVignette = 0.7f;
-    public float minVignette = 0.4f;
-    public float interpolationPoint;
-    public bool invincibility;
-    public float vignetteIntensity;
-    public bool vignetteGoUp;
-    //Vignette vignette;
+    public int health, sphereRadius, potion;
+    public float maxVignette = 0.7f, minVignette = 0.4f, interpolationPoint, vignetteIntensity;
+    public bool invincibility, vignetteGoUp;
+    public LayerMask healthMask;
+    Vignette vignette;
     // Start is called before the first frame update
     /*void Start()
     {
@@ -34,13 +32,12 @@ public class Player : MonoBehaviour
         //If the player gets hit by a projectile while they aren't invincible then they take damage, their healthbar is lowered, they say ouch and becomes invincible
         if (collision.collider.tag == "Enemy" && invincibility == false)
         {
-            //EnemyController controller = collision.gameObject.GetComponent<EnemyController>();
-            //health -= controller.damage;
+            /*AIFollow controller = collision.gameObject.GetComponent<AIFollow>();
+            health -= controller.damage;*/
             //healthBar.takedamage(damage);
             //PlayerAudio.PlayOneShot(OuchSound);
             StartCoroutine(InvincibilityFrame());
         }
-
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -48,7 +45,7 @@ public class Player : MonoBehaviour
         /*Makes sure that interpolationPoint can't go over or under 0-1 and changes the vignette point based on vignetteIntensity 
         which in turn is based on the interpolationPoint*/
         interpolationPoint = Mathf.Clamp(interpolationPoint, 0, 1);
-        //vignette.intensity.value = vignetteIntensity;
+        vignette.intensity.value = vignetteIntensity;
         vignetteIntensity = Mathf.Lerp(minVignette, maxVignette, interpolationPoint);
 
         //Makes the vignette go up and down when you take damage
@@ -64,9 +61,13 @@ public class Player : MonoBehaviour
                 interpolationPoint -= 0.08f;
             }
         }
-        /*if (Physics.CheckSphere(transform.position, sphereRadius))
+        if (Physics.CheckSphere(transform.position, sphereRadius, healthMask))
         {
-
-        }*/
+            health += potion;
+        }
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

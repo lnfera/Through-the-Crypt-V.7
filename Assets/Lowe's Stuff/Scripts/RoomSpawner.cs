@@ -10,15 +10,14 @@ public class RoomSpawner : MonoBehaviour
     // 4 --> need right door
 
     private RoomTemplates templates;
-
     private int rand;
-
     public bool SpawnerInWay = false;
-
     public bool RoomInWay = false;
+    public float waitTime = 4f;
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(gameObject, waitTime);
         templates = FindObjectOfType<RoomTemplates>();
         Invoke(nameof(Spawn), 0.1f);
         Debug.Log("Spawned");

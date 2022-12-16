@@ -248,14 +248,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 179082877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b5c01bd8ea42f244b51ef342949ce0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 524d3ee518ddd1f479742e0fb5372054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  attackrange: 5
-  PlayerMask:
+  lookraduis: 10
+  target: {fileID: 1337239472}
+  LayerGround:
+    serializedVersion: 2
+    m_Bits: 0
+  LayerPlayer:
     serializedVersion: 2
     m_Bits: 33554432
+  AttackCooldown: 1
+  AttackRange: 4
+  SightRange: 5
+  FleeRange: 2
+  Speed: 1
+  InAttackRange: 0
+  InSightRange: 0
+  InFleeRange: 0
+  SpottedPlayer: 0
+  AttackingAnimation: {fileID: 0}
 --- !u!1 &968659371
 GameObject:
   m_ObjectHideFlags: 0
