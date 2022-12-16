@@ -15,9 +15,11 @@ public class AiMelee : AiFollow
     {
         InAttackRange = Physics.CheckSphere(transform.position, AttackRange, LayerPlayer);
         InSightRange = Physics.CheckSphere(transform.position, SightRange, LayerPlayer);
+        InFleeRange = Physics.CheckSphere(transform.position, FleeRange, LayerPlayer);
 
-        if (InSightRange && !InAttackRange) ChasePlayer();
-        if (InSightRange && InAttackRange) MeleeAttack();
+        if (InSightRange && !InAttackRange && !InFleeRange) ChasePlayer();
+        if (InSightRange && InAttackRange && !InFleeRange) MeleeAttack();
+        if (InSightRange && InAttackRange && InFleeRange) FleePlayer();
     }
 }
 

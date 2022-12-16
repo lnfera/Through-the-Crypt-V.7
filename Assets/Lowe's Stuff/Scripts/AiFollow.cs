@@ -8,8 +8,8 @@ public class AiFollow : MonoBehaviour
     public Transform target;
     public LayerMask LayerGround;
     public LayerMask LayerPlayer;
-    Rigidbody rb;
     public float AttackCooldown;
+    public Rigidbody rb;
 
     public float AttackRange;
     public float SightRange;
@@ -56,13 +56,8 @@ public class AiFollow : MonoBehaviour
 
     public void FleePlayer()
     {
-
-        Vector3 dir = transform.position - target.position;
-        
-
+        transform.position = Vector3.MoveTowards(transform.position, -target.position, Speed * Time.deltaTime);
         Debug.Log("Flee");
-
-
     }
 
     private void OnDrawGizmosSelected()
@@ -77,7 +72,7 @@ public class AiFollow : MonoBehaviour
 
     IEnumerator MeleeAttacking()
     {
-        AttackingAnimation.Play();
+        //AttackingAnimation.Play();
         yield return new WaitForSeconds(AttackCooldown);
         Debug.Log("Attacked");
     }
