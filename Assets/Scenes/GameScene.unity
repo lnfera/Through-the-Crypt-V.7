@@ -303,7 +303,7 @@ PrefabInstance:
     - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
       propertyPath: Boss
       value: 
-      objectReference: {fileID: 62124097997150415, guid: 384aab141609b284889b95799a1fb950, type: 3}
+      objectReference: {fileID: 628834751147985591, guid: 744337fe6f44c83498a3bd3fceeab269, type: 3}
     - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
       propertyPath: WaitTime
       value: 2

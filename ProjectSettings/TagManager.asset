@@ -8,6 +8,7 @@ TagManager:
   - Room
   - Money
   - Healthhp
+  - 'RoomChanger '
   layers:
   - Default
   - TransparentFX
