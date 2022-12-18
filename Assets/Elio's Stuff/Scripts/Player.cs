@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         if (collision.collider.tag == "Enemy" && invincibility == false)
         {
             AiFollow controller = collision.gameObject.GetComponent<AiFollow>();
-            //health -= controller.damage;
+            health -= controller.damage;
             //healthBar.takedamage(damage);
             //PlayerAudio.PlayOneShot(OuchSound);
             StartCoroutine(InvincibilityFrame());

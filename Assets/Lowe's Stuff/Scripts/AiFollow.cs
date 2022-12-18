@@ -10,6 +10,7 @@ public class AiFollow : MonoBehaviour
     public LayerMask LayerPlayer;
     public float AttackCooldown;
     public Rigidbody rb;
+    public GameObject potion;
 
     public float AttackRange;
     public float SightRange;
@@ -20,6 +21,9 @@ public class AiFollow : MonoBehaviour
     public bool InSightRange;
     public bool InFleeRange;
     public bool SpottedPlayer;
+
+    public int health;
+    public int damage;
 
     public Animation AttackingAnimation;
 
@@ -34,7 +38,12 @@ public class AiFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (health <= 0)
+        {
+            //Spawns a potion then destroys the enemy
+            Instantiate(potion, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
     }
 
     public void ChasePlayer()
