@@ -32,8 +32,8 @@ public class Player : MonoBehaviour
         //If the player gets hit by a projectile while they aren't invincible then they take damage, their healthbar is lowered, they say ouch and becomes invincible
         if (collision.collider.tag == "Enemy" && invincibility == false)
         {
-            /*AIFollow controller = collision.gameObject.GetComponent<AIFollow>();
-            health -= controller.damage;*/
+            AiFollow controller = collision.gameObject.GetComponent<AiFollow>();
+            //health -= controller.damage;
             //healthBar.takedamage(damage);
             //PlayerAudio.PlayOneShot(OuchSound);
             StartCoroutine(InvincibilityFrame());
@@ -61,6 +61,8 @@ public class Player : MonoBehaviour
                 interpolationPoint -= 0.08f;
             }
         }
+
+        //Heals you if you put a potion towards your head and sends you to a game over scene when your health is zero
         if (Physics.CheckSphere(transform.position, sphereRadius, healthMask))
         {
             health += potion;
