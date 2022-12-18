@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomTemplates
       objectReference: {fileID: 0}
+    - target: {fileID: 6141557569254427468, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
+      propertyPath: m_TagString
+      value: Room
+      objectReference: {fileID: 0}
     - target: {fileID: 6141557569254427470, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -295,6 +299,14 @@ PrefabInstance:
     - target: {fileID: 6141557569254427470, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
+      propertyPath: Boss
+      value: 
+      objectReference: {fileID: 62124097997150415, guid: 384aab141609b284889b95799a1fb950, type: 3}
+    - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
+      propertyPath: WaitTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6141557569254427471, guid: 0a289239b2f7bec4aa5ab217f82e696c, type: 3}
       propertyPath: furniture.Array.size

@@ -24,22 +24,13 @@ public class RoomTemplates : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BossSpawned == false)
+        if (WaitTime <= 0 && BossSpawned == false)
         {
             for (int i = 0; i <= rooms.Count; i++)
             {
-                StartCoroutine(BossSpawn());
-                {
-                }
-            }
 
-            IEnumerator BossSpawn()
-            {
-
-                for (int i = 0; i <= rooms.Count; i++)
+                if (i == rooms.Count - 1)
                 {
-                    if (i == rooms.Count - 1)
-                        yield return new WaitForSeconds(1);
                     Instantiate(Boss, rooms[i].transform.position, Quaternion.identity);
                     Debug.Log(BossSpawned);
                     BossSpawned = true;
@@ -47,5 +38,10 @@ public class RoomTemplates : MonoBehaviour
 
             }
         }
+        else
+        {
+            WaitTime -= Time.deltaTime; 
+        }
+
     }
 }
