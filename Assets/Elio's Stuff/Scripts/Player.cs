@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int health, sphereRadius, potion;
+    public int health, sphereRadius;
     public float maxVignette = 0.7f, minVignette = 0.4f, interpolationPoint, vignetteIntensity;
     public bool invincibility, vignetteGoUp;
     public LayerMask healthMask;
@@ -65,7 +65,8 @@ public class Player : MonoBehaviour
         //Heals you if you put a potion towards your head and sends you to a game over scene when your health is zero
         if (Physics.CheckSphere(transform.position, sphereRadius, healthMask))
         {
-            health += potion;
+            //Item healthpotion = .gameObject.GetComponent<Item>();
+            //health += potion;
         }
         if (health <= 0)
         {

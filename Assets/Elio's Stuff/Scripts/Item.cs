@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int money, health;
     private string item;
+    public int potion;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +17,15 @@ public class Item : MonoBehaviour
     {
         
     }
-    public void EatItem(int mValue, int hValue)
+    public void EatItem(Player player)
     {
         if (item == "Money")
         {
-            money += mValue;
+            //player.money += mValue;
         }
         else if (item == "Healthp")
         {
-            health += hValue;
+            player.health += potion;
         }
         Destroy(gameObject);
     }
@@ -33,7 +33,8 @@ public class Item : MonoBehaviour
     {
          if (collision.collider.tag == "Player")
          {
-            EatItem(100, 25);
+            Player player = collision.gameObject.GetComponent<Player>();
+            EatItem(player);
          }
     }
 }
