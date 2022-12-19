@@ -9,8 +9,7 @@ public class Addroom : MonoBehaviour
     void Start()
     {
         Roomlist = GameObject.FindGameObjectWithTag("Room").GetComponent<RoomTemplates>();
-        Roomlist.rooms.Add(gameObject);
-        
+        Roomlist.rooms.Add(gameObject);        
     }
 
     // Update is called once per frame
