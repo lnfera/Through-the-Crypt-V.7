@@ -31,6 +31,8 @@ public class RoomTemplates : MonoBehaviour
 
                 if (i == rooms.Count - 1)
                 {
+                    Transform Child = rooms[i].transform.GetChild(0);
+                    Child.gameObject.SetActive(false);
                     Instantiate(Boss, rooms[i].transform.position, Quaternion.identity);
                     Debug.Log(BossSpawned);
                     BossSpawned = true;
@@ -42,6 +44,5 @@ public class RoomTemplates : MonoBehaviour
         {
             WaitTime -= Time.deltaTime; 
         }
-
     }
 }
