@@ -26,25 +26,25 @@ public class RoomSpawner : MonoBehaviour
 
     void Spawn()
     {
-        if (SpawnerInWay == false && RoomInWay == false)
+        if (SpawnerInWay == false && RoomInWay == false) //Ifall det finns en Spawner eller ett rum ivägen 
         {
-            if (openingdirection == 1)
+            if (openingdirection == 1) //Ifall openingdir är 1 så ska ett rum från bottomRooms listan spawna vid spawnpointen
             {
                 var rand = Random.Range(0, templates.bottomRooms.Length);
                 Debug.Log("Chosen Room");
                 Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
             }
-            else if (openingdirection == 2)
+            else if (openingdirection == 2) //Om rummet inte har openingdir 1 och har istället openingdir 2, tar den ett rum från toproom istället
             {
                 var rand = Random.Range(0, templates.topRooms.Length);
                 Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
             }
-            else if (openingdirection == 3)
+            else if (openingdirection == 3) //Om rummet inte har openingdir 2 och har istället openingdir 3, tar den ett rum från leftroom istället
             {
                 var rand = Random.Range(0, templates.leftRooms.Length);
                 Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
             }
-            else if (openingdirection == 4)
+            else if (openingdirection == 4) //Om rummet inte har openingdir 3 och har istället openingdir 4, tar den ett rum från rightroom istället
             {
                 var rand = Random.Range(0, templates.rightRooms.Length);
                 Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
@@ -56,13 +56,13 @@ public class RoomSpawner : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Room")
+        if (other.gameObject.tag == "Room") //Ifall Spawnern träffar ett rum så förstörs gameobjekten så inga fler rum kan spawnas på den punkten
         {
             RoomInWay = true;
             Destroy(gameObject);
         }
 
-        if (other.CompareTag("SpawnPoint"))
+        if (other.CompareTag("SpawnPoint")) //Ifall spawnern träffar en annan spawner så startas coroutinen EndSpawn
         {
             SpawnerInWay = true;
             StartCoroutine(EndSpawn());
@@ -70,11 +70,12 @@ public class RoomSpawner : MonoBehaviour
     
     }
 
-    IEnumerator EndSpawn()
+    IEnumerator EndSpawn() //När två spawners colliderar så väntar den 0.1 sekund så dom inte tar bort varandra på direkten, 
+                           //Den stänger sedan av collidern så scriptet inte repeteras efterdet så spawnar den en EndRoom och till sist så förstörs spawnern 
     {
         yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<Collider>().enabled = false;
-        Instantiate(templates.EndRooms[0], transform.position, templates.EndRooms[0].transform.rotation); //händer samma frame som RoomInWay
+        Instantiate(templates.EndRooms[0], transform.position, templates.EndRooms[0].transform.rotation);
         Destroy(gameObject);
     }
 }
