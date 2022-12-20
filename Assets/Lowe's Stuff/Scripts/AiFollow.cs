@@ -25,13 +25,16 @@ public class AiFollow : MonoBehaviour
     public int health;
     public int damage;
 
-    public Animation AttackingAnimation;
+    public AnimationClip AttackingAnimation;
+    Animation anim;
 
 
     // Start is called before the first frame update
+
     void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        anim = GetComponent<Animation>();
     }
 
 
@@ -81,7 +84,8 @@ public class AiFollow : MonoBehaviour
 
     IEnumerator MeleeAttacking()
     {
-        //AttackingAnimation.Play();
+        anim.clip = AttackingAnimation;
+        anim.Play();
         yield return new WaitForSeconds(AttackCooldown);
         Debug.Log("Attacked");
     }

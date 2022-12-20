@@ -41,7 +41,7 @@ public class RoomTemplates : MonoBehaviour
 
             }
         }
-        else
+        else if (BossSpawned == false)
         {
             WaitTime -= Time.deltaTime; //Räknar ner ifrån våran waitTime (Detta är ett annat sätt att få den att vänta utan att använda en coroutine)
         }
