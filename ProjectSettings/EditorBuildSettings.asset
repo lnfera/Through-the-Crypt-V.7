@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VR Experimental Area.unity
     guid: 3664ad00f6ecd224789274e269e684d4
+  - enabled: 1
+    path: Assets/Elio's Stuff/Scene/GameOver.unity
+    guid: f81b6952d1cdc0842b2370d9a8647994
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 6eb3f636805745a4183f4f2ab6d127cd
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: de2f74cbd92ce234388c3da666a5c40b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a83018a8a698aa74c992dedd31973355, type: 2}

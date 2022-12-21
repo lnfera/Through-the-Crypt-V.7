@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
     }
     public void EatItem(Player player)
     {
+        //Adds money or health depending on what the item is... money was however never implemented
         if (item == "Money")
         {
             //player.money += mValue;
@@ -31,10 +32,11 @@ public class Item : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision) 
     {
-         if (collision.collider.tag == "Player")
-         {
+        //
+        if (collision.collider.tag == "Player")
+        {
             Player player = collision.gameObject.GetComponent<Player>();
             EatItem(player);
-         }
+        }
     }
 }

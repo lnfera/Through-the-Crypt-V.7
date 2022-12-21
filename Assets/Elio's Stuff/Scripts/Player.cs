@@ -6,16 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int health, sphereRadius;
-    public float maxVignette = 0.7f, minVignette = 0.4f, interpolationPoint, vignetteIntensity;
+    public int health;
+    public float maxVignette = 0.7f, minVignette = 0.4f, interpolationPoint, vignetteIntensity, sphereRadius;
     public bool invincibility, vignetteGoUp;
     public LayerMask healthMask;
-    Vignette vignette;
+    XRIDefaultInputActions inputActions;
+    //Vignette vignette;
     // Start is called before the first frame update
     /*void Start()
     {
 
     }*/
+
+    
+
     IEnumerator InvincibilityFrame()
     {
         /*Makes the player invincible and turns the vignette up, waits for one second, then makes vignette start to go down, 
@@ -44,10 +48,10 @@ public class Player : MonoBehaviour
     {
         /*Makes sure that interpolationPoint can't go over or under 0-1 and changes the vignette point based on vignetteIntensity 
         which in turn is based on the interpolationPoint*/
-        interpolationPoint = Mathf.Clamp(interpolationPoint, 0, 1);
+        /*interpolationPoint = Mathf.Clamp(interpolationPoint, 0, 1);
         vignette.intensity.value = vignetteIntensity;
-        vignetteIntensity = Mathf.Lerp(minVignette, maxVignette, interpolationPoint);
-
+        vignetteIntensity = Mathf.Lerp(minVignette, maxVignette, interpolationPoint);*/
+        
         //Makes the vignette go up and down when you take damage
         if (invincibility == true && vignetteIntensity <= 0.7f && vignetteIntensity >= 0.4f)
         {
@@ -65,7 +69,8 @@ public class Player : MonoBehaviour
         //Heals you if you put a potion towards your head and sends you to a game over scene when your health is zero
         if (Physics.CheckSphere(transform.position, sphereRadius, healthMask))
         {
-            //Item healthpotion = .gameObject.GetComponent<Item>();
+            
+            Item healthpotion = Physics.OverlapSphere(transform.position, sphereRadius, healthMask)[0].gameObject.GetComponent<Item>();
             //health += potion;
         }
         if (health <= 0)
