@@ -33,8 +33,8 @@ public class AiFollow : MonoBehaviour
 
     void Awake()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        anim = GetComponent<Animation>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); //Sätter targerten till objekten med tagen spelare
+        anim = GetComponent<Animation>(); //sätter anim som komponenten Aninmator
     }
 
 
@@ -43,37 +43,37 @@ public class AiFollow : MonoBehaviour
     {
         if (health <= 0)
         {
-            //Spawns a potion then destroys the enemy
+            //Spawnar en potion när fienden dör
             Instantiate(potion, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
     }
 
     public void ChasePlayer()
-    {
+    {   //När spelaren blir spotted av en fiende så kommer fienden gå mot targets position
         Debug.Log("SpottedPlayer");
-        SpottedPlayer = true;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
+        SpottedPlayer = true; 
+        transform.position = Vector3.MoveTowards(transform.position, target.position, Speed * Time.deltaTime); 
     }
 
     public void MeleeAttack()
     {
-        StartCoroutine(MeleeAttacking());
+        StartCoroutine(MeleeAttacking()); //Startar coroutinen MeleeAttacking
     }
 
     public void RangedAttack()
     {
-        Debug.Log("Attacking");
+        Debug.Log("Attacking"); //Början på en Ranged attack (Hade gjort klart den ifall jag inte hade behövt göra om hela Ai scriptet
     }
 
     public void FleePlayer()
-    {
+    {   //Gör så när spelaren är nära nog så kommer fiende att gå emot motsatta hållet
         transform.position = Vector3.MoveTowards(transform.position, -target.position, Speed * Time.deltaTime);
         Debug.Log("Flee");
     }
 
     private void OnDrawGizmosSelected()
-    {
+    {   //Ritar upp spheres med radien av t.ex attackrange så att det blir enklare att se hur långt fienden kan t.ex se dig
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, AttackRange);
         Gizmos.color = Color.yellow;
@@ -84,9 +84,9 @@ public class AiFollow : MonoBehaviour
 
     IEnumerator MeleeAttacking()
     {
-        anim.clip = AttackingAnimation;
-        anim.Play();
-        yield return new WaitForSeconds(AttackCooldown);
+        anim.clip = AttackingAnimation; 
+        anim.Play(); // Spelar en attacj animation
+        yield return new WaitForSeconds(AttackCooldown); //Väntar en viss tid så fienden inte kan attackera varje sekund
         Debug.Log("Attacked");
     }
 }
