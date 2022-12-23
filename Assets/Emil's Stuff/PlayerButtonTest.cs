@@ -44,11 +44,11 @@ public class PlayerButtonTest : MonoBehaviour
             testText.text = "Instasiated";
         }
 
-        //Loads the next scene when you press trigger
-        if (input.XRILeftHandInteraction.Activate.WasPressedThisFrame() == true)
+        //Loads the next scene when you press trigger (This is just to test showcasing the different scenes
+        /*if (input.XRILeftHandInteraction.Activate.WasPressedThisFrame() == true)
         {
             LoadNextScene();
-        }
+        }*/
 
         /*Ray ray = new Ray(RightController.transform.position, RightController.transform.forward);
         RaycastHit hit;
